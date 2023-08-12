@@ -1,9 +1,9 @@
-import { contact } from "./contact";
+
 export interface ticket {
     id: number,
     subject: string,
     description: string,
-    contact: contact,
+    contact: object,
     assetNumber: string,
     loggedBy: string,
     category: string,
