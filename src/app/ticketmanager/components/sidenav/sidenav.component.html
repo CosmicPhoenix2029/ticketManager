@@ -5,7 +5,6 @@
         <mat-toolbar color="primary">
             Ticket Manager    
         </mat-toolbar>
-
         
         <mat-list>
             <mat-list-item>
@@ -39,7 +38,9 @@
     <!--this is the main section-->
     <mat-sidenav-content class="app-sidenav-content">
         <app-toolbar (toggleSidenav)="sidenav.toggle()"></app-toolbar>
-        <router-outlet></router-outlet>
+        <div class="wrapper">
+            <router-outlet></router-outlet>  
+        </div>
     </mat-sidenav-content>
 
 </mat-sidenav-container>
