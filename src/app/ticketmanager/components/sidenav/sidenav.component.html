@@ -1,5 +1,40 @@
 <mat-sidenav-container class="app-sidenav-container">
-    <mat-sidenav #sidenav class="app-sidenav">Sidenav content</mat-sidenav>
+    <!--this is the sidebar-->
+    <mat-sidenav #sidenav class="app-sidenav">
+        <!--ribbon at the top of the sidenav-->
+        <mat-toolbar color="primary">
+            Ticket Manager    
+        </mat-toolbar>
+
+        <mat-list>
+            <mat-list-item>
+                <mat-icon>home</mat-icon>
+                <span class="aligned-with-icon">Home</span>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon>add_circle</mat-icon>
+                <span class="aligned-with-icon">Add</span>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon>analytics</mat-icon>
+                <span class="aligned-with-icon">Reports</span>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon>search</mat-icon>
+                <span class="aligned-with-icon">Search</span>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon>build</mat-icon>
+                <span class="aligned-with-icon">Admin</span>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon>settings</mat-icon>
+                <span class="aligned-with-icon">Settings</span>
+            </mat-list-item>
+        </mat-list>
+    </mat-sidenav>
+
+    <!--this is the main section-->
     <mat-sidenav-content class="app-sidenav-content">
         <app-toolbar></app-toolbar>
         <router-outlet></router-outlet>
@@ -7,4 +42,5 @@
             Open Sidenav
         </button> 
     </mat-sidenav-content>
+
 </mat-sidenav-container>
