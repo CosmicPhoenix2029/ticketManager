@@ -14,7 +14,7 @@ export class MainContentComponent {
   tickets: ticket[] = [];
   errorMessage: string = "";
   sub!: Subscription;
-  constructor(private ticketService: TicketService) {}
+  constructor(private ticketService: TicketService) { }
 
   ngOnInit(): void {
     this.ticketService.getTickets().subscribe({
@@ -27,7 +27,7 @@ export class MainContentComponent {
   }
 
   ngOnDestroy(): void {
-    this.sub.unsubscribe();   
-}
+    this.sub.unsubscribe();
+  }
 
 }
