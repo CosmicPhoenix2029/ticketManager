@@ -1,11 +1,12 @@
 <mat-sidenav-container class="app-sidenav-container">
     <!--this is the sidebar-->
-    <mat-sidenav #sidenav class="app-sidenav">
+    <mat-sidenav #sidenav class="app-sidenav" opened="true" mode="over">
         <!--ribbon at the top of the sidenav-->
         <mat-toolbar color="primary">
             Ticket Manager    
         </mat-toolbar>
 
+        
         <mat-list>
             <mat-list-item>
                 <mat-icon>home</mat-icon>
@@ -36,7 +37,7 @@
 
     <!--this is the main section-->
     <mat-sidenav-content class="app-sidenav-content">
-        <app-toolbar></app-toolbar>
+        <app-toolbar (toggleSidenav)="sidenav.toggle()"></app-toolbar>
         <router-outlet></router-outlet>
         <button type="button" mat-button (click)="sidenav.open()">
             Open Sidenav
