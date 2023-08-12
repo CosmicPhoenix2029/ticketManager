@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TicketService } from '../../services/ticket.service';
 import { ticket } from '../../models/ticket';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-main-content',
@@ -12,7 +13,7 @@ export class MainContentComponent {
   filteredTickets: ticket[] = [];
   tickets: ticket[] = [];
   errorMessage: string = "";
-
+  sub!: Subscription;
   constructor(private ticketService: TicketService) {}
 
   ngOnInit(): void {
@@ -24,4 +25,9 @@ export class MainContentComponent {
       error: err => this.errorMessage = err
     });
   }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();   
+}
+
 }
