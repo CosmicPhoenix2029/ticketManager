@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ticket } from '../models/ticket';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, tap, catchError, throwError } from 'rxjs';
+import { Observable, tap, catchError, throwError, map } from 'rxjs';
 
 @Injectable({
   providedIn: "root"
@@ -17,6 +17,12 @@ export class TicketService {
     return this.http.get<ticket[]>(this.ticketUrl).pipe(
       tap(data => console.log("all", JSON.stringify(data))),
       catchError(this.handleError)
+    );
+  }
+
+  getTicketById(id: number): Observable<ticket | undefined> {
+    return this.getTickets().pipe(
+      map((tickets: ticket[]) => tickets.find(ticket => ticket.id === id))
     );
   }
 

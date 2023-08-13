@@ -10,13 +10,16 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { MainContentComponent } from './components/main-content/main-content.component';
 import { TicketService } from './services/ticket.service';
-import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TicketComponent } from './components/ticket/ticket.component';
 
 const routes: Routes = [
   //default route for the app
   {path: '', component: TicketmanagerAppComponent, children: [
     //default route for the TicketManagerAppComponents sub components
-      {path: '', component: MainContentComponent}
+      {path: '', component: MainContentComponent},
+      {path: 'home', component: MainContentComponent},
+      {path: 'ticket/:id', component: TicketComponent}
     ]
   },
   { path: '**', redirectTo: '' } 
@@ -27,7 +30,8 @@ const routes: Routes = [
     TicketmanagerAppComponent,
     ToolbarComponent,
     SidenavComponent,
-    MainContentComponent
+    MainContentComponent,
+    TicketComponent
   ],
   imports: [
     CommonModule,
