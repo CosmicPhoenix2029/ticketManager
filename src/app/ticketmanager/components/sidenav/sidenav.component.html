@@ -1,13 +1,13 @@
 <mat-sidenav-container class="app-sidenav-container">
     <!--this is the sidebar-->
-    <mat-sidenav #sidenav class="app-sidenav" opened="true" mode="over">
+    <mat-sidenav #sidenav class="app-sidenav" opened="false" mode="over">
         <!--ribbon at the top of the sidenav-->
         <mat-toolbar color="primary">
-            Ticket Manager    
+            Ticket Manager
         </mat-toolbar>
-        
+
         <mat-list>
-            <mat-list-item>
+            <mat-list-item routerLink="home">
                 <mat-icon>home</mat-icon>
                 <span class="aligned-with-icon">Home</span>
             </mat-list-item>
@@ -20,7 +20,7 @@
                 <span class="aligned-with-icon">Reports</span>
             </mat-list-item>
             <mat-list-item>
-                
+
                 <mat-icon>search</mat-icon>
                 <span class="aligned-with-icon">Search</span>
             </mat-list-item>
@@ -39,7 +39,7 @@
     <mat-sidenav-content class="app-sidenav-content">
         <app-toolbar (toggleSidenav)="sidenav.toggle()"></app-toolbar>
         <div class="wrapper">
-            <router-outlet></router-outlet>  
+            <router-outlet></router-outlet>
         </div>
     </mat-sidenav-content>
 

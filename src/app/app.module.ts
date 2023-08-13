@@ -9,6 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   //lazy load the module if /ticketmanager is navigated to
   { path: 'ticketmanager', loadChildren: () => import('./ticketmanager/ticketmanager.module').then(m => m.TicketmanagerModule ) },
+  
   //catch all route to redirect to the above route
   { path: '**', redirectTo: 'ticketmanager' }
 ];
