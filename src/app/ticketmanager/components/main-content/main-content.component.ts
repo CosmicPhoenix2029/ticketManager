@@ -1,26 +1,38 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, OnInit} from '@angular/core';
 import { TicketService } from '../../services/ticket.service';
 import { ticket } from '../../models/ticket';
 import { Subscription } from 'rxjs';
-
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort, SortDirection} from '@angular/material/sort';
+import {MatFormFieldModule} from '@angular/material/form-field';
 @Component({
   selector: 'app-main-content',
   templateUrl: './main-content.component.html',
   styleUrls: ['./main-content.component.scss']
 })
-export class MainContentComponent {
+export class MainContentComponent implements OnInit{
 
   filteredTickets: ticket[] = [];
   tickets: ticket[] = [];
   errorMessage: string = "";
   sub!: Subscription;
+  dataSource!: MatTableDataSource<ticket>;
+  displayedColumns: string[] = ['Ticket', 'Logged', 'Subject', 'Contact', 'AssetNumber', 'Base'];
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+
   constructor(private ticketService: TicketService) { }
 
   ngOnInit(): void {
     this.ticketService.getTickets().subscribe({
       next: tickets => {
         this.tickets = tickets;
-        this.filteredTickets = this.filteredTickets;
+        this.filteredTickets = this.tickets;
+        this.dataSource = new MatTableDataSource<ticket>(this.filteredTickets); 
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
       },
       error: err => this.errorMessage = err
     });

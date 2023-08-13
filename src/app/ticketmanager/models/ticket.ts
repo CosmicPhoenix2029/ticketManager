@@ -6,6 +6,7 @@ export interface ticket {
     contact: object,
     assetNumber: string,
     loggedBy: string,
+    loggedDate: Date;
     category: string,
     classification: string,
     urgency: string,

@@ -3,6 +3,46 @@
         <h3>Tickets assigned to Name</h3>
     </mat-card-header>
     <mat-card-content>
-                                                                                                                                                    
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+
+            <ng-container matColumnDef="Ticket">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Ticket </th>
+                <th mat-header-cell *matCellDef="let filteredTickets"> {{filteredTickets.id}} </th>
+            </ng-container>
+
+            <ng-container matColumnDef="Logged">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Logged </th>
+                <th mat-header-cell *matCellDef="let filteredTickets"> {{filteredTickets.loggedDate | date: 'dd-MM-yyyy'}} </th>
+            </ng-container>
+
+            <ng-container matColumnDef="Subject">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Subject </th>
+                <th mat-header-cell *matCellDef="let filteredTickets"> {{filteredTickets.subject}} </th>
+            </ng-container>
+
+            <ng-container matColumnDef="Contact">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Contact </th>
+                <th mat-header-cell *matCellDef="let filteredTickets"> {{filteredTickets.contact.name}} </th>
+            </ng-container>
+
+            <ng-container matColumnDef="AssetNumber">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Asset Id </th>
+                <th mat-header-cell *matCellDef="let filteredTickets"> {{filteredTickets.assetNumber}} </th>
+            </ng-container>
+
+            <ng-container matColumnDef="Base">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Base </th>
+                <th mat-header-cell *matCellDef="let filteredTickets"> {{filteredTickets.contact.address}} </th>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>  
+
+        <mat-paginator [pageSize]="20"
+                       [pageSizeOptions]="[20, 30, 50]"
+                       showFirstLastButtons
+                       aria-label="Select page of tickets">
+        </mat-paginator>                                                                                                                                                          
     </mat-card-content>
 </mat-card>
