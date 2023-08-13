@@ -26,7 +26,7 @@ export class MainContentComponent implements OnInit{
   constructor(private ticketService: TicketService) { }
 
   ngOnInit(): void {
-    this.ticketService.getTickets().subscribe({
+    this.ticketService.tickets.subscribe({
       next: tickets => {
         this.tickets = tickets;
         this.filteredTickets = this.tickets;
@@ -38,8 +38,8 @@ export class MainContentComponent implements OnInit{
     });
   }
 
-  ngOnDestroy(): void {
+  /*ngOnDestroy(): void {
     this.sub.unsubscribe();
-  }
+  }*/
 
 }

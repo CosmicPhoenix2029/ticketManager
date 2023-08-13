@@ -16,17 +16,18 @@ export class TicketComponent implements OnInit {
   constructor(private route: ActivatedRoute, private service: TicketService) { }
 
   ngOnInit(): void {
-    const id: number = Number(this.route.snapshot.paramMap.get('id'));
-    if (id) {
-      this.getTicket(id);
-    }
-  }
-
-  getTicket(id: number): void {
-    this.service.getTicketById(id).subscribe({
-      next: ticket => this.ticket = ticket,
-      error: err => this.errorMessage = err
+    this.route.params.subscribe({
+      next: params => {
+        let id = params['id'];
+        if(!id) id = 1;
+        //this.user = null;
+        this.service.tickets.subscribe(tickets => {
+          if(tickets.length === 0) {
+            return;  
+          }
+          this.ticket = this.service.getTicketById(id);
+        })
+      }
     });
   }
 }
-

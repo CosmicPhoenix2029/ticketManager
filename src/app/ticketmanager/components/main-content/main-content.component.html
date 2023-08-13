@@ -7,32 +7,44 @@
 
             <ng-container matColumnDef="Ticket">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Ticket </th>
-                <th mat-header-cell *matCellDef="let filteredTickets"> {{filteredTickets.id}} </th>
+                <th mat-header-cell *matCellDef="let filteredTickets">
+                    <a class="link-style" [routerLink]="['../ticket', filteredTickets.id]">{{filteredTickets.id}}</a>
+                </th>
             </ng-container>
 
             <ng-container matColumnDef="Logged">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Logged </th>
-                <th mat-header-cell *matCellDef="let filteredTickets"> {{filteredTickets.loggedDate | date: 'dd-MM-yyyy'}} </th>
+                <th mat-header-cell *matCellDef="let filteredTickets">
+                    <a class="link-style" [routerLink]="['../ticket', filteredTickets.id]">{{filteredTickets.loggedDate | date: 'dd-MM-yyyy'}}</a>
+                </th>
             </ng-container>
 
             <ng-container matColumnDef="Subject">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Subject </th>
-                <th mat-header-cell *matCellDef="let filteredTickets"> {{filteredTickets.subject}} </th>
+                <th mat-header-cell *matCellDef="let filteredTickets">
+                    <a class="link-style" [routerLink]="['../ticket', filteredTickets.id]">{{filteredTickets.subject}}</a>
+                </th>
             </ng-container>
 
             <ng-container matColumnDef="Contact">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Contact </th>
-                <th mat-header-cell *matCellDef="let filteredTickets"> {{filteredTickets.contact.name}} </th>
+                <th mat-header-cell *matCellDef="let filteredTickets">
+                    <a class="link-style" [routerLink]="['../ticket', filteredTickets.id]">{{filteredTickets.contact.name}}</a>
+                </th>
             </ng-container>
 
             <ng-container matColumnDef="AssetNumber">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Asset Id </th>
-                <th mat-header-cell *matCellDef="let filteredTickets"> {{filteredTickets.assetNumber}} </th>
+                <th mat-header-cell *matCellDef="let filteredTickets">
+                    <a class="link-style" [routerLink]="['../ticket', filteredTickets.id]">{{filteredTickets.assetNumber}}</a>
+                </th>
             </ng-container>
 
             <ng-container matColumnDef="Base">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Base </th>
-                <th mat-header-cell *matCellDef="let filteredTickets"> {{filteredTickets.contact.address}} </th>
+                <th mat-header-cell *matCellDef="let filteredTickets">
+                    <a class="link-style" [routerLink]="['../ticket', filteredTickets.id]">{{filteredTickets.contact.address}}</a> 
+                </th>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

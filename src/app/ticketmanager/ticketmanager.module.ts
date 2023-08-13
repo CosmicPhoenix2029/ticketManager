@@ -21,7 +21,7 @@ const routes: Routes = [
       {path: 'ticket/:id', component: TicketComponent}
     ]
   },
-  { path: '**', redirectTo: '' } 
+  { path: '**', redirectTo: 'home' } 
 ];
 
 @NgModule({
