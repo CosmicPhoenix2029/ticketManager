@@ -2,7 +2,7 @@
     {
         "id": "1",
         "subject": "an example subject",
-        "description": "an example of a multiline description\nhere is another line of text",
+        "description": "an example of a multiline description\\nhere is another line of text",
         "contact": {
             "name": "Bernard Bean", 
             "address": "123 Fake Street, Stafford, ST16 3DD",
@@ -25,7 +25,7 @@
     {
         "id": "2",
         "subject": "a new subject",
-        "description": "an example of a multiline description\nhere is another line of text",
+        "description": "an example of a multiline description \nhere is another line of text",
         "contact": {
             "name": "John Doe", 
             "address": "5 Example Avenue, Newcastle, ST5 3EB",

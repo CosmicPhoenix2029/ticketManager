@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'ticketmanager', loadChildren: () => import('./ticketmanager/ticketmanager.module').then(m => m.TicketmanagerModule ) },
   
   //catch all route to redirect to the above route
-  { path: '**', redirectTo: 'ticketmanager' }
+  { path: '**', redirectTo: 'ticketmanager/home' }
 ];
 
 @NgModule({
