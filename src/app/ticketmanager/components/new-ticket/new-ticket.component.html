@@ -1,0 +1,109 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Log a new ticket:</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="newTicket">
+
+        <mat-form-field>
+            <mat-label>Contact:</mat-label>
+            <input matInput [(ngModel)]="newTicket">
+          </mat-form-field>
+          
+          <mat-form-field>
+            <mat-label>Contact Email:</mat-label>
+            <input matInput formControlName="contactEmail">
+          </mat-form-field>
+          
+          <mat-form-field>
+            <mat-label>Contact Preference:</mat-label>
+            <mat-select formControlName="contactPreference">
+              <mat-option *ngFor="let contactPreference of contactPreferences" [value]="contactPreference">{{ contactPreference }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          
+          <mat-form-field>
+            <mat-label>Company:</mat-label>
+            <mat-select formControlName="company">
+              <mat-option *ngFor="let company of companies" [value]="company">{{ company }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          
+          <mat-form-field>
+            <mat-label>Room/Office:</mat-label>
+            <input matInput formControlName="room">
+          </mat-form-field>
+          
+          <mat-form-field>
+            <mat-label>Location:</mat-label>
+            <input matInput formControlName="base">
+          </mat-form-field>
+          
+          <mat-form-field>
+            <mat-label>Phone:</mat-label>
+            <input matInput formControlName="phone">
+          </mat-form-field>
+          
+          <mat-form-field>
+            <mat-label>Subject:</mat-label>
+            <input matInput formControlName="subject">
+          </mat-form-field>
+          
+          <mat-form-field>
+            <mat-label>Description:</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+          </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Notes:</mat-label>
+            <textarea matInput formControlName="notes"></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Onsite or remote support:</mat-label>
+            <mat-radio-group aria-label="Select an option" formControlName="onSite">
+                <mat-radio-button value="Onsite">Onsite</mat-radio-button>
+                <mat-radio-button value="Remote Support">Remote Support</mat-radio-button>
+              </mat-radio-group>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Asset Number:</mat-label>
+            <input matInput formControlName="assetNumber">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Impact:</mat-label>
+            <mat-select formControlName="impact">
+                <mat-option *ngFor="let impact of impacts" [value]="impact">{{ impact }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Priority:</mat-label>
+            <mat-select formControlName="priority">
+                <mat-option *ngFor="let priority of priorities" [value]="priority">{{ priority }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Category:</mat-label>
+            <mat-select formControlName="category">
+                <mat-option *ngFor="let category of categories" [value]="category">{{ category }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Team:</mat-label>
+            <mat-select formControlName="team">
+                <mat-option *ngFor="let team of teams" [value]="team">{{ team }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Member:</mat-label>
+            <mat-select formControlName="member">
+                <mat-option *ngFor="let member of teamMembers" [value]="member">{{ member }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+</mat-card>
