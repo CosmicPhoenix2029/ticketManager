@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material.module';
 import { RouterModule, Routes } from '@angular/router';
+import { LogTicketComponent } from './components/log-ticket/log-ticket.component';
 
 const routes: Routes = [
   //lazy load the module if /ticketmanager is navigated to
@@ -17,6 +18,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    LogTicketComponent,
   ],
   imports: [
     BrowserModule,

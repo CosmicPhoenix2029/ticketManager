@@ -18,7 +18,6 @@ const routes: Routes = [
   {path: '', component: TicketmanagerAppComponent, children: [
     //default route for the TicketManagerAppComponents sub components
       {path: 'home', component: MainContentComponent},
-      {path: '**', redirectTo: 'home'},
       {path: 'ticket/:id', component: TicketComponent}
     ]
   },
