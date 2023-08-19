@@ -90,7 +90,7 @@ export class NewTicketComponent {
   ];
 
   //hangle form submission
-  onSubmit(form: NgForm){
+  onSubmit(){
   //this is where I would validate, sanitize and add to DB via API
     
   }
