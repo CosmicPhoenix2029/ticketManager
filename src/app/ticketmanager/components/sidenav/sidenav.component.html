@@ -7,12 +7,12 @@
         </mat-toolbar>
 
         <mat-list>
-            <mat-list-item routerLink="home">
+            <mat-list-item routerLink="home" (click)="sidenav.toggle()">
                 <mat-icon>home</mat-icon>
                 <span class="aligned-with-icon">Home</span>
             </mat-list-item>
 
-            <mat-list-item routerLink="log">
+            <mat-list-item routerLink="log" (click)="sidenav.toggle()">
                 <mat-icon>add_circle</mat-icon>
                 <span class="aligned-with-icon">Add</span>
             </mat-list-item>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {FormControl, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
-//import {NgIf} from '@angular/common';
+import {FormControl, Validators, FormsModule, ReactiveFormsModule, NgForm} from '@angular/forms';
+import {NgIf} from '@angular/common';
 //import {MatInputModule} from '@angular/material/input';
 //import {MatFormFieldModule} from '@angular/material/form-field';
 
@@ -13,24 +13,25 @@ import {FormControl, Validators, FormsModule, ReactiveFormsModule} from '@angula
 
 export class NewTicketComponent {
 
-  contact = new FormControl('');
-  contactEmail = new FormControl('');
-  company = new FormControl('');
-  room = new FormControl('');
-  base = new FormControl('');
-  phone = new FormControl('');
-  contactPreference = new FormControl('');
-  subject = new FormControl('');
-  description = new FormControl('');
+  //form Controls
+  contact = new FormControl('', [Validators.required]);
+  contactEmail = new FormControl('', [Validators.required]);
+  company = new FormControl('', [Validators.required]);
+  room = new FormControl('', [Validators.required]);
+  base = new FormControl('', [Validators.required]);
+  phone = new FormControl('', [Validators.required]);
+  contactPreference = new FormControl('', [Validators.required]);
+  subject = new FormControl('', [Validators.required]);
+  description = new FormControl('', [Validators.required]);
   notes = new FormControl('');
-  onSite = new FormControl('');
-  assetNumber = new FormControl('');
-  category = new FormControl('');
-  impact = new FormControl('');
-  priority = new FormControl('');
-  team = new FormControl('');
-  member = new FormControl('');
+  assetNumber = new FormControl('', [Validators.required]);
+  category = new FormControl('', [Validators.required]);
+  impact = new FormControl('', [Validators.required]);
+  priority = new FormControl('', [Validators.required]);
+  team = new FormControl('', [Validators.required]);
+  member = new FormControl('', [Validators.required]);
 
+  //select options
   companies: string[] = [
     'SSHIS',
     'MPFT',
@@ -87,4 +88,11 @@ export class NewTicketComponent {
     'John Doe',
     'Margret McMcington'
   ];
+
+  //hangle form submission
+  onSubmit(form: NgForm){
+  //this is where I would validate, sanitize and add to DB via API
+    
+  }
+
 }
