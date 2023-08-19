@@ -6,6 +6,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material.module';
 import { RouterModule, Routes } from '@angular/router';
 
+
+
+
 const routes: Routes = [
   //lazy load the module if /ticketmanager is navigated to
   { path: 'ticketmanager', loadChildren: () => import('./ticketmanager/ticketmanager.module').then(m => m.TicketmanagerModule ) },

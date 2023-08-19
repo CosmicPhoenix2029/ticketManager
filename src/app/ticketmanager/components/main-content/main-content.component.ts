@@ -5,7 +5,6 @@ import { Subscription } from 'rxjs';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, SortDirection} from '@angular/material/sort';
-import {MatFormFieldModule} from '@angular/material/form-field';
 @Component({
   selector: 'app-main-content',
   templateUrl: './main-content.component.html',
