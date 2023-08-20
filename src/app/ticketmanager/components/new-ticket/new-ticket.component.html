@@ -103,7 +103,7 @@
 
       <mat-form-field class="half-width">
         <mat-label>priority:</mat-label>
-        <mat-select formControlName="impact">
+        <mat-select formControlName="priority">
           <mat-option *ngFor="let priority of priorities" [value]="priority">
             {{ priority }}
           </mat-option>
@@ -130,5 +130,6 @@
         </mat-select>
       </mat-form-field>
     </form>
+    <button mat-button color="primary" (click)="onSubmit()">submit</button>
   </mat-card-content>
 </mat-card>

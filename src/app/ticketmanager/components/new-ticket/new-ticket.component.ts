@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators, FormsModule, ReactiveFormsModule, NgForm, FormGroup} from '@angular/forms';
-import {NgIf} from '@angular/common';
+import { FormControl, Validators, FormsModule, ReactiveFormsModule, NgForm, FormGroup } from '@angular/forms';
+import { NgIf } from '@angular/common';
 import { ticket } from '../../models/ticket';
 //import {MatInputModule} from '@angular/material/input';
 //import {MatFormFieldModule} from '@angular/material/form-field';
@@ -9,10 +9,10 @@ import { ticket } from '../../models/ticket';
   selector: 'app-new-ticket',
   templateUrl: './new-ticket.component.html',
   styleUrls: ['./new-ticket.component.scss'],
-  
+
 })
 
-export class NewTicketComponent implements OnInit{
+export class NewTicketComponent implements OnInit {
 
   //constructing a new ticket object (this also helps reset the form when the page is moved away from and then back again)
   newTicket: ticket;
@@ -21,21 +21,21 @@ export class NewTicketComponent implements OnInit{
       id: null,
       subject: null,
       description: null,
+      notes: null,
       contact: null,
       assetNumber: null,
       loggedBy: null,
       loggedDate: null,
       category: null,
       classification: null,
-      urgency: null,
       impact: null,
       priority: null,
       status: null,
       team: null,
-      leadTech: null 
+      leadTech: null
     };
   }
-  
+
   //form Controls
   newTicketForm = new FormGroup({
     contact: new FormControl('', [Validators.required]),
@@ -44,7 +44,7 @@ export class NewTicketComponent implements OnInit{
     room: new FormControl('', [Validators.required]),
     base: new FormControl('', [Validators.required]),
     phone: new FormControl('', [Validators.required]),
-    contactPreference:  new FormControl('', [Validators.required]),
+    contactPreference: new FormControl('', [Validators.required]),
     subject: new FormControl('', [Validators.required]),
     description: new FormControl('', [Validators.required]),
     notes: new FormControl(''),
@@ -56,56 +56,56 @@ export class NewTicketComponent implements OnInit{
     member: new FormControl('')
   });
 
-    //getter methods for each formControl (needed for validation):
-    get contact() {
-      return this.newTicketForm.get('contact');
-    }
-    get contactEmail() {
-      return this.newTicketForm.get('contactEmail');
-    }
-    get company() {
-      return this.newTicketForm.get('company');
-    }
-    get room() {
-      return this.newTicketForm.get('room');
-    }
-    get base() {
-      return this.newTicketForm.get('base');
-    }
-    get phone() {
-      return this.newTicketForm.get('phone');
-    }
-    get contactPreference() {
-      return this.newTicketForm.get('contactPreference');
-    }
-    get subject() {
-      return this.newTicketForm.get('subject');
-    }
-    get description() {
-      return this.newTicketForm.get('description');
-    }
-    get notes() {
-      return this.newTicketForm.get('notes');
-    }
-    get assetNumber() {
-      return this.newTicketForm.get('assetNumber');
-    }
-    get category() {
-      return this.newTicketForm.get('category');
-    }
-    get impact() {
-      return this.newTicketForm.get('impact');
-    }
-    get priority() {
-      return this.newTicketForm.get('priority');
-    }
-    get team() {
-      return this.newTicketForm.get('team');
-    }
-    get member() {
-      return this.newTicketForm.get('member');
-    }
-    //select options
+  //getter methods for each formControl (needed for validation):
+  get contact() {
+    return this.newTicketForm.get('contact');
+  }
+  get contactEmail() {
+    return this.newTicketForm.get('contactEmail');
+  }
+  get company() {
+    return this.newTicketForm.get('company');
+  }
+  get room() {
+    return this.newTicketForm.get('room');
+  }
+  get base() {
+    return this.newTicketForm.get('base');
+  }
+  get phone() {
+    return this.newTicketForm.get('phone');
+  }
+  get contactPreference() {
+    return this.newTicketForm.get('contactPreference');
+  }
+  get subject() {
+    return this.newTicketForm.get('subject');
+  }
+  get description() {
+    return this.newTicketForm.get('description');
+  }
+  get notes() {
+    return this.newTicketForm.get('notes');
+  }
+  get assetNumber() {
+    return this.newTicketForm.get('assetNumber');
+  }
+  get category() {
+    return this.newTicketForm.get('category');
+  }
+  get impact() {
+    return this.newTicketForm.get('impact');
+  }
+  get priority() {
+    return this.newTicketForm.get('priority');
+  }
+  get team() {
+    return this.newTicketForm.get('team');
+  }
+  get member() {
+    return this.newTicketForm.get('member');
+  }
+  //select options
   companies: string[] = [
     'SSHIS',
     'MPFT',
@@ -164,9 +164,31 @@ export class NewTicketComponent implements OnInit{
   ];
 
   //hangle form submission
-  onSubmit(): void{
-  //this is where I would validate, sanitize and add to DB via API
+  onSubmit(): void {
+    //this is where I would validate, sanitize and add to DB via API
+    //for now I am simply constructing a new object and logging to console
+    if (this.newTicketForm.valid) {
+      this.newTicket.contact = {
+        name: this.newTicketForm.get('contact').value,
+        address: this.newTicketForm.get('base').value,
+        phoneNumber: this.newTicketForm.get('phone').value,
+        contactMethodPreference: this.newTicketForm.get('contactPreference').value
+      };
+      this.newTicket.subject = this.newTicketForm.get('subject').value,
+      this.newTicket.description = this.newTicketForm.get('description').value,
+      this.newTicket.notes = this.newTicketForm.get('notes').value,
+      this.newTicket.assetNumber = this.newTicketForm.get('assetNumber').value,
+      this.newTicket.loggedBy = 'Haydn Atkinson',
+      this.newTicket.loggedDate = new Date(),
+      this.newTicket.category = this.newTicketForm.get('category').value,
+      this.newTicket.classification = 'Incident',
+      this.newTicket.impact = this.newTicketForm.get('impact').value,
+      this.newTicket.priority = this.newTicketForm.get('priority').value,
+      this.newTicket.status = 'Active',
+      this.newTicket.team = this.newTicketForm.get('team').value,
+      this.newTicket.leadTech = this.newTicketForm.get('member').value
 
-  }
-
+      console.log(this.newTicket);
+    }
+  };
 }
