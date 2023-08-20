@@ -11,7 +11,14 @@
         </mat-card-header>
         <mat-card-content>
           <p>{{ticket.description}}</p>
-          <p>{{ ticket.contact}}</p>  
+          <p>{{ticket.contact['name']}}</p> 
+          <p>{{ticket.contact['phoneNumber']}}</p> 
+          <p>{{ticket.contact['contactMethodPreference']}}</p>
+          <p>{{ticket.contact['organisation']}}</p>
+          <p>{{ticket.impact}}</p>
+          <p>{{ticket.priority}}</p>
+          <p>{{ticket.team}}</p>
+          <p>{{ticket.leadTech}}</p>
         </mat-card-content>
       </mat-card>
 </div>

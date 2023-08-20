@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit, OnInit, ElementRef} from '@angular/core';
+import { Component, ViewChild, OnInit, Input} from '@angular/core';
 import { TicketService } from '../../services/ticket.service';
 import { ticket } from '../../models/ticket';
 import { Subscription } from 'rxjs';
@@ -10,6 +10,7 @@ import { MatSort, SortDirection} from '@angular/material/sort';
   templateUrl: './main-content.component.html',
   styleUrls: ['./main-content.component.scss']
 })
+
 export class MainContentComponent implements OnInit{
 
   filteredTickets: ticket[] = [];
@@ -21,6 +22,7 @@ export class MainContentComponent implements OnInit{
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+ 
 
   constructor(private ticketService: TicketService) { }
 

@@ -26,6 +26,7 @@ export class TicketComponent implements OnInit {
             return;  
           }
           this.ticket = this.service.getTicketById(id);
+          console.log(this.ticket);
         })
       }
     });

@@ -8,49 +8,64 @@
             <ng-container matColumnDef="Ticket">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Ticket </th>
                 <th mat-header-cell *matCellDef="let filteredTickets">
-                    <a class="link-style" [routerLink]="['../ticket', filteredTickets.id]">{{filteredTickets.id}}</a>
+                    <div [routerLink]="['../ticket', filteredTickets.id]">
+                        <p>{{filteredTickets.id}}</p>
+                    </div>
                 </th>
             </ng-container>
 
             <ng-container matColumnDef="Logged">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Logged </th>
                 <th mat-header-cell *matCellDef="let filteredTickets">
-                    <a class="link-style" [routerLink]="['../ticket', filteredTickets.id]">{{filteredTickets.loggedDate | date: 'dd-MM-yyyy'}}</a>
+                    <div [routerLink]="['../ticket', filteredTickets.id]">
+                        <p>{{filteredTickets.loggedDate | date: 'dd-MM-yyyy'}}</p>
+                    </div>
+                    
                 </th>
             </ng-container>
 
             <ng-container matColumnDef="Subject">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Subject </th>
                 <th mat-header-cell *matCellDef="let filteredTickets">
-                    <a class="link-style" [routerLink]="['../ticket', filteredTickets.id]">{{filteredTickets.subject}}</a>
+                    <div [routerLink]="['../ticket', filteredTickets.id]">
+                        <p>{{filteredTickets.subject}}</p>
+                    </div>
                 </th>
             </ng-container>
 
             <ng-container matColumnDef="Contact">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Contact </th>
                 <th mat-header-cell *matCellDef="let filteredTickets">
-                    <a class="link-style" [routerLink]="['../ticket', filteredTickets.id]">{{filteredTickets.contact.name}}</a>
+                    <div [routerLink]="['../ticket', filteredTickets.id]">
+                        <p>{{filteredTickets.contact.name}}</p>
+                    </div>
                 </th>
             </ng-container>
 
             <ng-container matColumnDef="AssetNumber">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Asset Id </th>
                 <th mat-header-cell *matCellDef="let filteredTickets">
-                    <a class="link-style" [routerLink]="['../ticket', filteredTickets.id]">{{filteredTickets.assetNumber}}</a>
+                    <div [routerLink]="['../ticket', filteredTickets.id]">
+                        <p>{{filteredTickets.assetNumber}}</p>
+                    </div>  
                 </th>
             </ng-container>
 
             <ng-container matColumnDef="Base">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Base </th>
                 <th mat-header-cell *matCellDef="let filteredTickets">
-                    <a class="link-style" [routerLink]="['../ticket', filteredTickets.id]">{{filteredTickets.contact.address}}</a> 
+                    <div [routerLink]="['../ticket', filteredTickets.id]">
+                        <p>{{filteredTickets.contact.address}}</p>
+                    </div> 
                 </th>
             </ng-container>
 
             <ng-container matColumnDef="leadTech">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> lead Tech </th>
                 <th mat-header-cell *matCellDef="let filteredTickets">
-                    <a class="link-style" [routerLink]="['../ticket', filteredTickets.id]">{{filteredTickets.leadTech}}</a> 
+                    <div [routerLink]="['../ticket', filteredTickets.id]">
+                        <p>{{filteredTickets.leadTech}}</p> 
+                    </div>
                 </th>
             </ng-container>
 
