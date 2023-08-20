@@ -47,6 +47,13 @@
                 </th>
             </ng-container>
 
+            <ng-container matColumnDef="leadTech">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> lead Tech </th>
+                <th mat-header-cell *matCellDef="let filteredTickets">
+                    <a class="link-style" [routerLink]="['../ticket', filteredTickets.id]">{{filteredTickets.leadTech}}</a> 
+                </th>
+            </ng-container>
+
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>  

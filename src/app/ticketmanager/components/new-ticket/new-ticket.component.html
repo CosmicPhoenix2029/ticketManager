@@ -3,113 +3,127 @@
     <h1>Log a new ticket:</h1>
   </mat-card-header>
   <mat-card-content>
-    <form (ngSubmit)="onSubmit()">
+    <form [formGroup]="newTicketForm" (ngSubmit)="onSubmit()">
 
       <div class="contact">
         <mat-form-field class="half-width">
           <mat-label>Contact:</mat-label>
-          <input matInput [formControl]="contact">
+          <input matInput formControlName="contact">
+          <mat-error *ngIf="contact.invalid">You must enter a contact</mat-error>
         </mat-form-field>
   
         <mat-form-field class="half-width">
           <mat-label>email address:</mat-label>
-          <input matInput [formControl]="contactEmail">
+          <input matInput formControlName="contactEmail">
+          <mat-error *ngIf="contactEmail.invalid">You must enter an email address</mat-error>
         </mat-form-field>
   
         <mat-form-field class="half-width">
           <mat-label>company:</mat-label>
-          <mat-select [formControl]="company">
+          <mat-select formControlName="company">
             <mat-option *ngFor="let company of companies" [value]="company">
               {{ company }}
             </mat-option>
           </mat-select>
+          <mat-error *ngIf="company.invalid">You must enter a company</mat-error>
         </mat-form-field>
   
         <mat-form-field class="half-width">
           <mat-label>room:</mat-label>
-          <input matInput [formControl]="room">
+          <input matInput formControlName="room">
+          <mat-error *ngIf="room.invalid">You must enter a room</mat-error>
         </mat-form-field>
   
         <mat-form-field class="half-width">
           <mat-label>base/office:</mat-label>
-          <input matInput [formControl]="base">
+          <input matInput formControlName="base">
+          <mat-error *ngIf="base.invalid">You must enter a base/office</mat-error>
         </mat-form-field>
   
         <mat-form-field class="half-width">
           <mat-label>phone:</mat-label>
-          <input matInput [formControl]="phone">
+          <input matInput formControlName="phone">
+          <mat-error *ngIf="phone.invalid">You must enter a phone number</mat-error>
         </mat-form-field>
   
         <mat-form-field class="half-width">
           <mat-label>contact preference:</mat-label>
-          <mat-select [formControl]="contactPreference">
+          <mat-select formControlName="contactPreference">
             <mat-option *ngFor="let preference of contactPreferences" [value]="preference">
               {{ preference }}
             </mat-option>
           </mat-select>
+          <mat-error *ngIf="contactPreference.invalid">You must enter a contact preference</mat-error>
         </mat-form-field>
       </div>
       
       <div class=""></div>
       <mat-form-field class="full-width">
         <mat-label>Subject:</mat-label>
-        <input matInput [formControl]="subject">
+        <input matInput formControlName="subject">
+        <mat-error *ngIf="subject.invalid">You must enter a subject</mat-error>
       </mat-form-field>
 
       <mat-form-field class="full-width">
         <mat-label>Description:</mat-label>
-        <textarea matInput [formControl]="description"  rows="6"></textarea>
+        <textarea matInput formControlName="description"  rows="6"></textarea>
+        <mat-error *ngIf="description.invalid">You must enter a description</mat-error>
       </mat-form-field>
 
       <mat-form-field class="full-width">
         <mat-label>Notes:</mat-label>
-        <textarea matInput [formControl]="notes" rows="6"></textarea>
+        <textarea matInput formControlName="notes" rows="6"></textarea>
       </mat-form-field>
 
       <mat-form-field class="half-width">
         <mat-label>Asset Number:</mat-label>
-        <input matInput [formControl]="assetNumber">
+        <input matInput formControlName="assetNumber">
+        <mat-error *ngIf="assetNumber.invalid">You must enter an asset number</mat-error>
       </mat-form-field>
 
       <mat-form-field class="half-width">
         <mat-label>category:</mat-label>
-        <mat-select [formControl]="category">
+        <mat-select formControlName="category">
           <mat-option *ngFor="let category of categories" [value]="category">
             {{ category }}
           </mat-option>
         </mat-select>
+        <mat-error *ngIf="category.invalid">You must enter a category</mat-error>
       </mat-form-field>
 
       <mat-form-field class="half-width">
         <mat-label>impact:</mat-label>
-        <mat-select [formControl]="impact">
+        <mat-select formControlName="impact">
           <mat-option *ngFor="let impact of impacts" [value]="impact">
             {{ impact }}
           </mat-option>
         </mat-select>
+        <mat-error *ngIf="impact.invalid">You must enter an impact</mat-error>
       </mat-form-field>
 
       <mat-form-field class="half-width">
         <mat-label>priority:</mat-label>
-        <mat-select [formControl]="impact">
+        <mat-select formControlName="impact">
           <mat-option *ngFor="let priority of priorities" [value]="priority">
             {{ priority }}
           </mat-option>
         </mat-select>
+        <mat-error *ngIf="priority.invalid">You must enter a priority</mat-error>
       </mat-form-field>
 
       <mat-form-field class="half-width">
         <mat-label>team:</mat-label>
-        <mat-select [formControl]="team">
+        <mat-select formControlName="team">
           <mat-option *ngFor="let team of teams" [value]="team">
             {{ team }}
           </mat-option>
         </mat-select>
+        <mat-error *ngIf="team.invalid">You must enter a team</mat-error>
       </mat-form-field>
 
       <mat-form-field class="half-width">
         <mat-label>Lead Tech:</mat-label>
-        <mat-select [formControl]="member">
+        <mat-select formControlName="member">
           <mat-option *ngFor="let member of teamMembers" [value]="member">
             {{ member }}
           </mat-option>

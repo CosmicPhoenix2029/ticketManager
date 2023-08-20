@@ -17,7 +17,7 @@ export class MainContentComponent implements OnInit{
   errorMessage: string = "";
   sub!: Subscription;
   dataSource!: MatTableDataSource<ticket>;
-  displayedColumns: string[] = ['Ticket', 'Logged', 'Subject', 'Contact', 'AssetNumber', 'Base'];
+  displayedColumns: string[] = ['Ticket', 'Logged', 'Subject', 'Contact', 'AssetNumber', 'Base', 'leadTech'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
