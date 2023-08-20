@@ -1,4 +1,4 @@
-<mat-sidenav-container class="app-sidenav-container">
+<mat-sidenav-container class="app-sidenav-container" [class.dark-theme]="isDarkTheme">
     <!--this is the sidebar-->
     <mat-sidenav #sidenav class="app-sidenav" opened="false" mode="over">
         <!--ribbon at the top of the sidenav-->
@@ -42,7 +42,7 @@
 
     <!--this is the main section-->
     <mat-sidenav-content class="app-sidenav-content">
-        <app-toolbar (toggleSidenav)="sidenav.toggle()"></app-toolbar>
+        <app-toolbar (toggleTheme)="toggleTheme()" (toggleSidenav)="sidenav.toggle()"></app-toolbar>
         <div class="wrapper">
             <router-outlet></router-outlet>
         </div>

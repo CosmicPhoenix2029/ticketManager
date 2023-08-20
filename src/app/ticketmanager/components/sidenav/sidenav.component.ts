@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent {
+  isDarkTheme: boolean = false;
 
+  toggleTheme(): void {
+    this.isDarkTheme = !this.isDarkTheme;
+  }
 }
