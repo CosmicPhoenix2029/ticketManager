@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit, OnInit} from '@angular/core';
+import { Component, ViewChild, AfterViewInit, OnInit, ElementRef} from '@angular/core';
 import { TicketService } from '../../services/ticket.service';
 import { ticket } from '../../models/ticket';
 import { Subscription } from 'rxjs';
@@ -36,9 +36,4 @@ export class MainContentComponent implements OnInit{
       error: err => this.errorMessage = err
     });
   }
-
-  /*ngOnDestroy(): void {
-    this.sub.unsubscribe();
-  }*/
-
 }

@@ -1,9 +1,9 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="toolbar">
     <button mat-button class="sidenav-toggle" (click)="toggleSidenav.emit()">
         <mat-icon>menu</mat-icon>
     </button>
     <span>Ticket Manager</span>
-    <button mat-button (click)="toggleTheme.emit()">
+    <button mat-button class="theme-toggle" (click)="toggleTheme.emit()">
         <mat-icon>dark_mode</mat-icon>
     </button>
 </mat-toolbar>
