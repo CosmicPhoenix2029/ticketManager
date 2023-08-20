@@ -11,7 +11,7 @@
           <input matInput formControlName="contact">
           <mat-error *ngIf="contact.invalid">You must enter a contact</mat-error>
         </mat-form-field>
-  
+        
         <mat-form-field class="half-width">
           <mat-label>email address:</mat-label>
           <input matInput formControlName="contactEmail">
@@ -130,6 +130,6 @@
         </mat-select>
       </mat-form-field>
     </form>
-    <button mat-button color="primary" (click)="onSubmit()">submit</button>
+    <button mat-raised-button color="primary" (click)="onSubmit()">submit</button>
   </mat-card-content>
 </mat-card>
