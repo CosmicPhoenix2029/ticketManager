@@ -6,8 +6,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule}  from '@angular/material/form-field';
-import 'zone.js';
-import 'zone.js/dist/long-stack-trace-zone.js';
 import { TicketmanagerAppComponent } from './ticketmanager-app.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';

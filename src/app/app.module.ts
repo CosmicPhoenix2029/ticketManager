@@ -6,7 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material.module';
 import { RouterModule, Routes } from '@angular/router';
 
-
+import 'zone.js';
+import 'zone.js/dist/long-stack-trace-zone.js';
 
 
 const routes: Routes = [
