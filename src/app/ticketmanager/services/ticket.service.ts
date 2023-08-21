@@ -9,7 +9,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 
 export class TicketService {
 
-  private ticketUrl = 'green-rock-06bd0b003.3.azurestaticapps.net:4200/api/tickets/tickets.json';
+  private ticketUrl = '/data-api/rest/Tickets';
   private _tickets:  BehaviorSubject<ticket[]>;
   private dataStore: {
     tickets: ticket[];
