@@ -29,7 +29,7 @@
     }
   },
   "entities": {
-    "Tickets": {
+    "tickets": {
       "source": "dbo.tickets",
       "permissions": [
         {
