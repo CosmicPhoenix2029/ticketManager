@@ -38,12 +38,4 @@ export class MainContentComponent implements OnInit{
       error: err => this.errorMessage = err
     });
   }
-
-  async list() {
-    const endpoint = '/data-api/rest/tickets';
-    const response = await fetch(endpoint);
-    console.log(response);
-    const data = await response.json();
-    console.table(data.value);
-  }
 }
