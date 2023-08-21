@@ -42,4 +42,10 @@ export class TicketService {
     return this.dataStore.tickets.find(ticket => ticket.id == id);
   }
 
+  async list() {
+    const endpoint = '/data-api/rest/tickets';
+    const response = await fetch(endpoint);
+    const data = await response.json();
+    console.table(data.value);
+  }
 }
