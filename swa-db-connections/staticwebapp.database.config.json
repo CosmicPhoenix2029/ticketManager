@@ -30,7 +30,7 @@
   },
   "entities": {
     "Tickets": {
-      "source": "dbo.Tickets",
+      "source": "dbo.tickets",
       "permissions": [
         {
           "actions": ["*"],
