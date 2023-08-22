@@ -10,15 +10,15 @@
           </mat-card-title-group>
         </mat-card-header>
         <mat-card-content>
-          <p>{{ticket.description}}</p>
-          <p>{{ticket.contact['name']}}</p> 
-          <p>{{ticket.contact['phoneNumber']}}</p> 
-          <p>{{ticket.contact['contactMethodPreference']}}</p>
-          <p>{{ticket.contact['organisation']}}</p>
-          <p>{{ticket.impact}}</p>
-          <p>{{ticket.priority}}</p>
-          <p>{{ticket.team}}</p>
-          <p>{{ticket.leadTech}}</p>
+          <p><b>Description:</b><br>{{ticket.description}}</p>
+          <p><b>Contact name:</b><br>{{ticket.contact['name']}}</p> 
+          <p><b>Phone number:</b><br>{{ticket.contact['phoneNumber']}}</p> 
+          <p><b>Preferred contact method:</b><br>{{ticket.contact['contactMethodPreference']}}</p>
+          <p><b>Company:</b><br>{{ticket.contact['organisation']}}</p>
+          <p><b>Impact:</b><br>{{ticket.impact}}</p>
+          <p><b>Priority:</b><br>{{ticket.priority}}</p>
+          <p><b>Team:</b><br>{{ticket.team}}</p>
+          <p><b>Member:</b><br>{{ticket.leadTech}}</p>
         </mat-card-content>
       </mat-card>
 </div>
